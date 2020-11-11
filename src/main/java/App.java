@@ -12,7 +12,7 @@ public class App extends JFrame implements ActionListener {
         // Add controls/components
         JPanel centerPanel = new JPanel();
         JButton helloBtn = new JButton("Click Me");
-        helloBtn.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 24));
+        helloBtn.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 24));
         helloBtn.setSize(300, 200);
         helloBtn.addActionListener(this);
         centerPanel.add(helloBtn);
@@ -32,8 +32,13 @@ public class App extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JButton temp = (JButton) e.getSource();
         System.out.println("JButton text: " + temp.getText());
-        String name = JOptionPane.showInputDialog(null, "Please enter your name:", "Question", JOptionPane.QUESTION_MESSAGE);
-        this.responseMessage.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 36));
+        String name = JOptionPane.showInputDialog(
+                null,
+                "Please enter your name:",
+                "Question",
+                JOptionPane.QUESTION_MESSAGE
+        );
+        this.responseMessage.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 36));
         this.responseMessage.setText("Hi " + name + " !!");
 
         // source: http://www.java2s.com/Tutorial/Java/0240__Swing/HorizontalAlignmentCENTER.htm
@@ -42,8 +47,8 @@ public class App extends JFrame implements ActionListener {
     }
 
     /*******************************************************************************************************************
-                                                        MAIN PROGRAM
-    *******************************************************************************************************************/
+     MAIN PROGRAM
+     ******************************************************************************************************************/
     public static void main(String[] args) {
         App app = new App();
     }
