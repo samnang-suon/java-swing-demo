@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 
 public class App extends JFrame implements ActionListener {
 
+    // Attributes
+    private JLabel responseMessage;
+
     public App() {
         // Add controls/components
         JPanel centerPanel = new JPanel();
@@ -14,6 +17,9 @@ public class App extends JFrame implements ActionListener {
         helloBtn.addActionListener(this);
         centerPanel.add(helloBtn);
         this.add(centerPanel, BorderLayout.CENTER);
+
+        this.responseMessage = new JLabel();
+        this.add(this.responseMessage, BorderLayout.SOUTH);
 
         this.setTitle("Demo App");
         this.setSize(600, 400);
@@ -25,9 +31,14 @@ public class App extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton temp = (JButton) e.getSource();
+        System.out.println("JButton text: " + temp.getText());
         String name = JOptionPane.showInputDialog(null, "Please enter your name:", "Question", JOptionPane.QUESTION_MESSAGE);
-        temp.setText("Hi " + name);
-        temp.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 36));
+        this.responseMessage.setFont(new Font(Font.SANS_SERIF,  Font.BOLD, 36));
+        this.responseMessage.setText("Hi " + name + " !!");
+
+        // source: http://www.java2s.com/Tutorial/Java/0240__Swing/HorizontalAlignmentCENTER.htm
+        this.responseMessage.setHorizontalAlignment(JLabel.CENTER);
+        this.responseMessage.setVerticalAlignment(JLabel.CENTER);
     }
 
     public static void main(String[] args) {
