@@ -41,6 +41,9 @@ public class App extends JFrame implements ActionListener {
         this.responseMessage.setVerticalAlignment(JLabel.CENTER);
     }
 
+    /*******************************************************************************************************************
+                                                        MAIN PROGRAM
+    *******************************************************************************************************************/
     public static void main(String[] args) {
         App app = new App();
     }
