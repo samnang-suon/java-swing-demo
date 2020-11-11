@@ -22,7 +22,7 @@ public class App extends JFrame implements ActionListener {
         this.add(this.responseMessage, BorderLayout.SOUTH);
 
         this.setTitle("Demo App");
-        this.setSize(600, 400);
+        this.setSize(400, 200);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
